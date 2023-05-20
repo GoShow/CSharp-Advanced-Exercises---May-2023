@@ -42,28 +42,28 @@ foreach (string command in commands)
             if (currentRow > 0)
             {
                 currentRow--;
-                isEnd = ProcessCell(currentRow, currentCol, coalsCount, matrix);
+                isEnd = ProcessCell(currentRow, currentCol, matrix, ref coalsCount);
             }
             break;
         case "left":
             if (currentCol > 0)
             {
                 currentCol--;
-                isEnd = ProcessCell(currentRow, currentCol, coalsCount, matrix);
+                isEnd = ProcessCell(currentRow, currentCol, matrix, ref coalsCount);
             }
             break;
         case "right":
             if (currentCol < size - 1)
             {
                 currentCol++;
-                isEnd = ProcessCell(currentRow, currentCol, coalsCount, matrix);
+                isEnd = ProcessCell(currentRow, currentCol, matrix, ref coalsCount);
             }
             break;
         case "down":
             if (currentRow < size - 1)
             {
                 currentRow++;
-                isEnd = ProcessCell(currentRow, currentCol, coalsCount, matrix);
+                isEnd = ProcessCell(currentRow, currentCol, matrix, ref coalsCount);
             }
             break;
     }
@@ -90,7 +90,7 @@ if (coalsCount == 0)
 
 Console.WriteLine($"{coalsCount} coals left. ({currentRow}, {currentCol})");
 
-static bool ProcessCell(int row, int col, int coalsCount, char[,] matrix)
+static bool ProcessCell(int row, int col, char[,] matrix, ref int coalsCount)
 {
     switch (matrix[row, col])
     {

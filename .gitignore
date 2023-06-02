@@ -349,3 +349,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /03.SetsAndDictionariesAdvanced/03.SetsAndDictionariesAdvanced.sln
+/07.CustomStructures/Tests
